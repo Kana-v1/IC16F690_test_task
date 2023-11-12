@@ -1,0 +1,543 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F690 ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"14 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\expand_heap.c
+[v ___expand_heap __expand_heap `(*.39v  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\lite_free.c
+[v ___simple_search_fl __simple_search_fl `(*.1v  1 e 1 0 ]
+"16 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\lite_malloc.c
+[v _malloc malloc `(*.39v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+[v i1___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 C:\Users\kana\MPLABXProjects\handrex_test.X\main.c
+[v _isr isr `II(v  1 e 1 0 ]
+"31
+[v _global_setup global_setup `(v  1 e 1 0 ]
+"38
+[v _main main `(v  1 e 1 0 ]
+"21 C:\Users\kana\MPLABXProjects\handrex_test.X\task1/blink.h
+[s S107 . 6 `*.39VEuc 1 GPIO_port 2 0 `*.39VEuc 1 TRIS_port 2 2 `i 1 index 2 4 ]
+"5 C:\Users\kana\MPLABXProjects\handrex_test.X\task1/blink.c
+[v _gather_LED_info gather_LED_info `(*.39*.39S107  1 e 1 0 ]
+"41
+[v _setup_GPIO setup_GPIO `(v  1 e 1 0 ]
+"46
+[v _led_on led_on `(v  1 e 1 0 ]
+"52
+[v _led_off led_off `(v  1 e 1 0 ]
+"57
+[v _blink blink `(v  1 e 1 0 ]
+"4 C:\Users\kana\MPLABXProjects\handrex_test.X\task2/zero_crossing.c
+[v _setup_RB5 setup_RB5 `(v  1 s 1 setup_RB5 ]
+"10
+[v _setup_ADC setup_ADC `(v  1 s 1 setup_ADC ]
+"22
+[v _start_adc_conversion start_adc_conversion `(v  1 e 1 0 ]
+[v i1_start_adc_conversion start_adc_conversion `(v  1 e 1 0 ]
+"26
+[v _is_adc_conversion_done is_adc_conversion_done `(i  1 e 2 0 ]
+"30
+[v _reset_adc_interrupt reset_adc_interrupt `(v  1 e 1 0 ]
+"35
+[v _get_conversion_result get_conversion_result `(f  1 e 4 0 ]
+"43
+[v _is_crossing_zero_point is_crossing_zero_point `(i  1 e 2 0 ]
+"47
+[v _start_spectating_zero_crossing start_spectating_zero_crossing `(v  1 e 1 0 ]
+"7 C:\Users\kana\MPLABXProjects\handrex_test.X\task3/adjust_power.c
+[v _setup_RC7 setup_RC7 `(v  1 e 1 0 ]
+"12
+[v _set_low_pwr set_low_pwr `(v  1 e 1 0 ]
+"16
+[v _set_full_pwr set_full_pwr `(v  1 e 1 0 ]
+[v i1_set_full_pwr set_full_pwr `(v  1 e 1 0 ]
+"24
+[v _pwr_pulse pwr_pulse `(v  1 e 1 0 ]
+"3 C:\Users\kana\MPLABXProjects\handrex_test.X\task4/state_change.c
+[v _turn_board_on turn_board_on `(v  1 e 1 0 ]
+[v i1_turn_board_on turn_board_on `(v  1 e 1 0 ]
+"7
+[v _turn_board_off turn_board_off `(v  1 e 1 0 ]
+"6 C:\Users\kana\MPLABXProjects\handrex_test.X\task5/pwr_btn_control.c
+[v _setup_RC2 setup_RC2 `(v  1 e 1 0 ]
+"11
+[v _is_pwr_btn_pressed is_pwr_btn_pressed `(i  1 e 2 0 ]
+"15
+[v _set_state_according_to_pwr_btn set_state_according_to_pwr_btn `(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"216
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"255
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S466 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"272
+[u S475 . 1 `S466 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES475  1 e 1 @7 ]
+[s S46 . 1 `uc 1 RABIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RABIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"341
+[u S55 . 1 `S46 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES55  1 e 1 @11 ]
+[s S282 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"406
+[s S290 . 1 `uc 1 T1IF 1 0 :1:0 
+`uc 1 T2IF 1 0 :1:1 
+]
+[u S293 . 1 `S282 1 . 1 0 `S290 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES293  1 e 1 @12 ]
+"1073
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S320 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 VCFG 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"1110
+[s S326 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S333 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S336 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S339 . 1 `S320 1 . 1 0 `S326 1 . 1 0 `S333 1 . 1 0 `S336 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES339  1 e 1 @31 ]
+"1245
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1295
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S226 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1309
+[u S232 . 1 `S226 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES232  1 e 1 @134 ]
+"1334
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S443 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1351
+[u S452 . 1 `S443 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES452  1 e 1 @135 ]
+[s S256 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1416
+[s S264 . 1 `uc 1 T1IE 1 0 :1:0 
+`uc 1 T2IE 1 0 :1:1 
+]
+[u S267 . 1 `S256 1 . 1 0 `S264 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES267  1 e 1 @140 ]
+[s S122 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1564
+[s S128 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S133 . 1 `S122 1 . 1 0 `S128 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES133  1 e 1 @143 ]
+"2594
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S364 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ADCS 1 0 :3:4 
+]
+"2618
+[s S367 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+]
+[u S372 . 1 `S364 1 . 1 0 `S367 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES372  1 e 1 @159 ]
+[s S241 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IOCB4 1 0 :1:4 
+`uc 1 IOCB5 1 0 :1:5 
+`uc 1 IOCB6 1 0 :1:6 
+`uc 1 IOCB7 1 0 :1:7 
+]
+"2738
+[u S247 . 1 `S241 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES247  1 e 1 @278 ]
+"3002
+[v _ANSEL ANSEL `VEuc  1 e 1 @286 ]
+[s S517 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+"3019
+[u S526 . 1 `S517 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES526  1 e 1 @286 ]
+[s S213 . 1 `uc 1 ANS8 1 0 :1:0 
+`uc 1 ANS9 1 0 :1:1 
+`uc 1 ANS10 1 0 :1:2 
+`uc 1 ANS11 1 0 :1:3 
+]
+"3077
+[u S218 . 1 `S213 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES218  1 e 1 @287 ]
+"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\expand_heap.c
+[v ___heap_hi __heap_hi `[0]uc  1 e 0 0 ]
+[v ___heap_lo __heap_lo `[0]uc  1 e 0 0 ]
+"12
+[v _brkp brkp `*.39uc  1 s 2 brkp ]
+"17 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\lite_free.c
+[u S1021 . 2 `*.1S1023 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S1023 chunk 4 `ui 1 size 2 0 `S1021 1 . 2 2 ]
+[v ___freelist __freelist `*.1S1023  1 e 1 0 ]
+"5 C:\Users\kana\MPLABXProjects\handrex_test.X\task3/adjust_power.c
+[v _power_lvl power_lvl `VEui  1 s 2 power_lvl ]
+"38 C:\Users\kana\MPLABXProjects\handrex_test.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"49
+} 0
+"47 C:\Users\kana\MPLABXProjects\handrex_test.X\task2/zero_crossing.c
+[v _start_spectating_zero_crossing start_spectating_zero_crossing `(v  1 e 1 0 ]
+{
+"51
+} 0
+"22
+[v _start_adc_conversion start_adc_conversion `(v  1 e 1 0 ]
+{
+"24
+} 0
+"4
+[v _setup_RB5 setup_RB5 `(v  1 s 1 setup_RB5 ]
+{
+"8
+} 0
+"10
+[v _setup_ADC setup_ADC `(v  1 s 1 setup_ADC ]
+{
+"20
+} 0
+"31 C:\Users\kana\MPLABXProjects\handrex_test.X\main.c
+[v _global_setup global_setup `(v  1 e 1 0 ]
+{
+"36
+} 0
+"3 C:\Users\kana\MPLABXProjects\handrex_test.X\task4/state_change.c
+[v _turn_board_on turn_board_on `(v  1 e 1 0 ]
+{
+"5
+} 0
+"16 C:\Users\kana\MPLABXProjects\handrex_test.X\task3/adjust_power.c
+[v _set_full_pwr set_full_pwr `(v  1 e 1 0 ]
+{
+"18
+} 0
+"7
+[v _setup_RC7 setup_RC7 `(v  1 e 1 0 ]
+{
+"10
+} 0
+"6 C:\Users\kana\MPLABXProjects\handrex_test.X\task5/pwr_btn_control.c
+[v _setup_RC2 setup_RC2 `(v  1 e 1 0 ]
+{
+"9
+} 0
+"57 C:\Users\kana\MPLABXProjects\handrex_test.X\task1/blink.c
+[v _blink blink `(v  1 e 1 0 ]
+{
+"61
+[v blink@i i `i  1 a 2 51 ]
+[s S107 . 6 `*.39VEuc 1 GPIO_port 2 0 `*.39VEuc 1 TRIS_port 2 2 `i 1 index 2 4 ]
+"59
+[v blink@leds_info leds_info `*.39*.39S107  1 a 2 49 ]
+"66
+} 0
+"41
+[v _setup_GPIO setup_GPIO `(v  1 e 1 0 ]
+{
+"44
+} 0
+"46
+[v _led_on led_on `(v  1 e 1 0 ]
+{
+"47
+[v led_on@shift shift `i  1 a 2 7 ]
+[s S107 . 6 `*.39VEuc 1 GPIO_port 2 0 `*.39VEuc 1 TRIS_port 2 2 `i 1 index 2 4 ]
+"46
+[v led_on@led led `*.39S107  1 p 2 0 ]
+"50
+} 0
+"52
+[v _led_off led_off `(v  1 e 1 0 ]
+{
+"53
+[v led_off@shift shift `i  1 a 2 5 ]
+[s S107 . 6 `*.39VEuc 1 GPIO_port 2 0 `*.39VEuc 1 TRIS_port 2 2 `i 1 index 2 4 ]
+"52
+[v led_off@led led `*.39S107  1 p 2 0 ]
+"55
+} 0
+"21 C:\Users\kana\MPLABXProjects\handrex_test.X\task1/blink.h
+[s S107 . 6 `*.39VEuc 1 GPIO_port 2 0 `*.39VEuc 1 TRIS_port 2 2 `i 1 index 2 4 ]
+"5 C:\Users\kana\MPLABXProjects\handrex_test.X\task1/blink.c
+[v _gather_LED_info gather_LED_info `(*.39*.39S107  1 e 1 0 ]
+{
+"31
+[v gather_LED_info@leds_info leds_info `*.39*.39S107  1 a 2 42 ]
+"26
+[v gather_LED_info@LED5 LED5 `*.39S107  1 a 2 40 ]
+"21
+[v gather_LED_info@LED4 LED4 `*.39S107  1 a 2 38 ]
+"16
+[v gather_LED_info@LED3 LED3 `*.39S107  1 a 2 36 ]
+"11
+[v gather_LED_info@LED2 LED2 `*.39S107  1 a 2 34 ]
+"6
+[v gather_LED_info@LED1 LED1 `*.39S107  1 a 2 32 ]
+"39
+} 0
+"16 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\lite_malloc.c
+[v _malloc malloc `(*.39v  1 e 1 0 ]
+{
+"54
+[v malloc@sz sz `*.39ui  1 a 2 20 ]
+"42
+[v malloc@new new `*.39uc  1 a 2 26 ]
+"41
+[v malloc@m m `ui  1 a 2 18 ]
+"20
+[v malloc@p p `*.39v  1 a 2 24 ]
+"21
+[v malloc@size size `ui  1 a 2 22 ]
+"16
+[v malloc@n n `ui  1 p 2 14 ]
+"18
+[v malloc@cur cur `*.39uc  1 s 2 cur ]
+[v malloc@end end `*.39uc  1 s 2 end ]
+"19
+[v malloc@lock lock `VE[2]i  1 s 4 lock ]
+"63
+} 0
+"19 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\lite_free.c
+[v ___simple_search_fl __simple_search_fl `(*.1v  1 e 1 0 ]
+{
+"53
+[v ___simple_search_fl@remaining_size remaining_size `ui  1 a 2 6 ]
+"50
+[u S1021 . 2 `*.1S1023 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S1023 chunk 4 `ui 1 size 2 0 `S1021 1 . 2 2 ]
+[v ___simple_search_fl@split split `*.1S1023  1 a 1 9 ]
+"45
+[u S1021 . 2 `*.1S1023 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S1023 chunk 4 `ui 1 size 2 0 `S1021 1 . 2 2 ]
+[v ___simple_search_fl@next next `*.1S1023  1 a 1 11 ]
+"20
+[u S1021 . 2 `*.1S1023 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S1023 chunk 4 `ui 1 size 2 0 `S1021 1 . 2 2 ]
+[v ___simple_search_fl@best best `*.1S1023  1 a 1 13 ]
+"23
+[v ___simple_search_fl@c c `*.1S1023  1 a 1 12 ]
+"22
+[v ___simple_search_fl@last last `*.1S1023  1 a 1 10 ]
+"21
+[v ___simple_search_fl@best_last best_last `*.1S1023  1 a 1 8 ]
+"19
+[v ___simple_search_fl@n n `ui  1 p 2 0 ]
+"65
+} 0
+"14 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\expand_heap.c
+[v ___expand_heap __expand_heap `(*.39v  1 e 1 0 ]
+{
+[v ___expand_heap@pn pn `*.4ui  1 a 1 wreg ]
+"17
+[v ___expand_heap@new_brkp new_brkp `*.39uc  1 a 2 3 ]
+"16
+[v ___expand_heap@n n `ui  1 a 2 1 ]
+"14
+[v ___expand_heap@pn pn `*.4ui  1 a 1 wreg ]
+"16
+[v ___expand_heap@pn pn `*.4ui  1 a 1 0 ]
+"32
+} 0
+"17 C:\Users\kana\MPLABXProjects\handrex_test.X\main.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"29
+} 0
+"22 C:\Users\kana\MPLABXProjects\handrex_test.X\task2/zero_crossing.c
+[v i1_start_adc_conversion start_adc_conversion `(v  1 e 1 0 ]
+{
+"24
+} 0
+"15 C:\Users\kana\MPLABXProjects\handrex_test.X\task5/pwr_btn_control.c
+[v _set_state_according_to_pwr_btn set_state_according_to_pwr_btn `(v  1 e 1 0 ]
+{
+"22
+} 0
+"3 C:\Users\kana\MPLABXProjects\handrex_test.X\task4/state_change.c
+[v i1_turn_board_on turn_board_on `(v  1 e 1 0 ]
+{
+"5
+} 0
+"16 C:\Users\kana\MPLABXProjects\handrex_test.X\task3/adjust_power.c
+[v i1_set_full_pwr set_full_pwr `(v  1 e 1 0 ]
+{
+"18
+} 0
+"7 C:\Users\kana\MPLABXProjects\handrex_test.X\task4/state_change.c
+[v _turn_board_off turn_board_off `(v  1 e 1 0 ]
+{
+"9
+} 0
+"12 C:\Users\kana\MPLABXProjects\handrex_test.X\task3/adjust_power.c
+[v _set_low_pwr set_low_pwr `(v  1 e 1 0 ]
+{
+"14
+} 0
+"11 C:\Users\kana\MPLABXProjects\handrex_test.X\task5/pwr_btn_control.c
+[v _is_pwr_btn_pressed is_pwr_btn_pressed `(i  1 e 2 0 ]
+{
+"13
+} 0
+"30 C:\Users\kana\MPLABXProjects\handrex_test.X\task2/zero_crossing.c
+[v _reset_adc_interrupt reset_adc_interrupt `(v  1 e 1 0 ]
+{
+"33
+} 0
+"24 C:\Users\kana\MPLABXProjects\handrex_test.X\task3/adjust_power.c
+[v _pwr_pulse pwr_pulse `(v  1 e 1 0 ]
+{
+"38
+} 0
+"43 C:\Users\kana\MPLABXProjects\handrex_test.X\task2/zero_crossing.c
+[v _is_crossing_zero_point is_crossing_zero_point `(i  1 e 2 0 ]
+{
+"45
+} 0
+"35
+[v _get_conversion_result get_conversion_result `(f  1 e 4 0 ]
+{
+"38
+[v get_conversion_result@voltage voltage `f  1 a 4 18 ]
+"36
+[v get_conversion_result@adc_res adc_res `i  1 a 2 22 ]
+"41
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+[v i1___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v i1___wmul@product product `ui  1 a 2 4 ]
+"15
+[v i1___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v i1___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 12 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 11 ]
+[v ___awdiv@counter counter `uc  1 a 1 10 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+[v ___awdiv@dividend dividend `i  1 p 2 8 ]
+"41
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 24 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 28 ]
+"12
+} 0
+"26 C:\Users\kana\MPLABXProjects\handrex_test.X\task2/zero_crossing.c
+[v _is_adc_conversion_done is_adc_conversion_done `(i  1 e 2 0 ]
+{
+"28
+} 0
