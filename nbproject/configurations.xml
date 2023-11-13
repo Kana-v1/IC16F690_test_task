@@ -10,6 +10,8 @@
       <itemPath>general.h</itemPath>
       <itemPath>task4/state_change.h</itemPath>
       <itemPath>task5/pwr_btn_control.h</itemPath>
+      <itemPath>task6/engine_manage.h</itemPath>
+      <itemPath>task8/change_engine_power.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +26,9 @@
       <itemPath>task3/adjust_power.c</itemPath>
       <itemPath>task4/state_change.c</itemPath>
       <itemPath>task5/pwr_btn_control.c</itemPath>
+      <itemPath>task6/engine_manage.c</itemPath>
+      <itemPath>general.c</itemPath>
+      <itemPath>task8/change_engine_power.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -40,7 +45,7 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC16F690</targetDevice>
-        <targetHeader></targetHeader>
+        <targetHeader>AC162061</targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC8</languageToolchain>

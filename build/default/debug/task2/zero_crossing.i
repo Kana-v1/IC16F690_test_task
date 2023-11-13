@@ -2561,7 +2561,7 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 17 "task2/zero_crossing.h" 2
-# 32 "task2/zero_crossing.h"
+# 31 "task2/zero_crossing.h"
     void start_spectating_zero_crossing(void);
     void start_adc_conversion(void);
     int is_adc_conversion_done(void);
@@ -2572,19 +2572,19 @@ char *tempnam(const char *, const char *);
 
 
 static void setup_RB5(void) {
-    ANSELHbits.ANS11 = 0x1;
-    TRISBbits.TRISB5 = 0x1;
-    IOCBbits.IOCB5 = 0x1;
+    ANSELHbits.ANS11 = 1;
+    TRISBbits.TRISB5 = 1;
+    IOCBbits.IOCB5 = 1;
 }
 
 static void setup_ADC(void) {
-    PIE1bits.ADIE = 0x1;
+    PIE1bits.ADIE = 1;
     PIR1bits.ADIF = 0;
-    INTCONbits.PEIE = 0x1;
+    INTCONbits.PEIE = 1;
 
-    ADCON0bits.ADON = 0x1;
-    ADCON0bits.VCFG = 0x0;
-    ADCON0bits.ADFM = 0x1;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.VCFG = 0;
+    ADCON0bits.ADFM = 1;
     ADCON0bits.CHS = 0b1011;
     ADCON1bits.ADCS = 0b101;
 }
@@ -2598,7 +2598,7 @@ int is_adc_conversion_done(void) {
 }
 
 void reset_adc_interrupt(void) {
-    PIE1bits.ADIE = 0x1;
+    PIE1bits.ADIE = 1;
     PIR1bits.ADIF = 0;
 }
 

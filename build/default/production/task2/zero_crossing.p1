@@ -343,13 +343,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _setup_RB5 ]
 [f ]
 "5
-[; ;task2/zero_crossing.c: 5:     ANSELHbits.ANS11 = 0x1;
+[; ;task2/zero_crossing.c: 5:     ANSELHbits.ANS11 = 1;
 [e = . . _ANSELHbits 0 3 -> -> 1 `i `uc ]
 "6
-[; ;task2/zero_crossing.c: 6:     TRISBbits.TRISB5 = 0x1;
+[; ;task2/zero_crossing.c: 6:     TRISBbits.TRISB5 = 1;
 [e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
 "7
-[; ;task2/zero_crossing.c: 7:     IOCBbits.IOCB5 = 0x1;
+[; ;task2/zero_crossing.c: 7:     IOCBbits.IOCB5 = 1;
 [e = . . _IOCBbits 0 2 -> -> 1 `i `uc ]
 "8
 [; ;task2/zero_crossing.c: 8: }
@@ -362,22 +362,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _setup_ADC ]
 [f ]
 "11
-[; ;task2/zero_crossing.c: 11:     PIE1bits.ADIE = 0x1;
+[; ;task2/zero_crossing.c: 11:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "12
 [; ;task2/zero_crossing.c: 12:     PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "13
-[; ;task2/zero_crossing.c: 13:     INTCONbits.PEIE = 0x1;
+[; ;task2/zero_crossing.c: 13:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "15
-[; ;task2/zero_crossing.c: 15:     ADCON0bits.ADON = 0x1;
+[; ;task2/zero_crossing.c: 15:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "16
-[; ;task2/zero_crossing.c: 16:     ADCON0bits.VCFG = 0x1;
-[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
+[; ;task2/zero_crossing.c: 16:     ADCON0bits.VCFG = 0;
+[e = . . _ADCON0bits 0 3 -> -> 0 `i `uc ]
 "17
-[; ;task2/zero_crossing.c: 17:     ADCON0bits.ADFM = 0x1;
+[; ;task2/zero_crossing.c: 17:     ADCON0bits.ADFM = 1;
 [e = . . _ADCON0bits 0 4 -> -> 1 `i `uc ]
 "18
 [; ;task2/zero_crossing.c: 18:     ADCON0bits.CHS = 0b1011;
@@ -423,7 +423,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _reset_adc_interrupt ]
 [f ]
 "31
-[; ;task2/zero_crossing.c: 31:     PIE1bits.ADIE = 0x1;
+[; ;task2/zero_crossing.c: 31:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "32
 [; ;task2/zero_crossing.c: 32:     PIR1bits.ADIF = 0;
@@ -439,13 +439,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _get_conversion_result ]
 [f ]
 "36
-[; ;task2/zero_crossing.c: 36:     uint16_t adc_res = (ADRESH << 8) | ADRESL;
-[v _adc_res `us ~T0 @X0 1 a ]
-[e = _adc_res -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `us ]
+[; ;task2/zero_crossing.c: 36:     int adc_res = (ADRESH << 8) | ADRESL;
+[v _adc_res `i ~T0 @X0 1 a ]
+[e = _adc_res | << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 "38
-[; ;task2/zero_crossing.c: 38:     float voltage = (adc_res * 220) / (2^10 - 1);
+[; ;task2/zero_crossing.c: 38:     float voltage = (adc_res * 5) / (2^10 - 1);
 [v _voltage `f ~T0 @X0 1 a ]
-[e = _voltage -> / * -> _adc_res `ui -> -> 220 `i `ui -> ^ -> 2 `i - -> 10 `i -> 1 `i `ui `f ]
+[e = _voltage -> / * _adc_res -> 5 `i ^ -> 2 `i - -> 10 `i -> 1 `i `f ]
 "40
 [; ;task2/zero_crossing.c: 40:     return voltage;
 [e ) _voltage ]
@@ -455,21 +455,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 142 ]
 }
 "43
-[; ;task2/zero_crossing.c: 43: void start_spectating_zero_crossing(void) {
+[; ;task2/zero_crossing.c: 43: int is_crossing_zero_point(void) {
+[v _is_crossing_zero_point `(i ~T0 @X0 1 ef ]
+{
+[e :U _is_crossing_zero_point ]
+[f ]
+"44
+[; ;task2/zero_crossing.c: 44:     return get_conversion_result() == 0;
+[e ) -> == ( _get_conversion_result ..  -> -> 0 `i `f `i ]
+[e $UE 143  ]
+"45
+[; ;task2/zero_crossing.c: 45: }
+[e :UE 143 ]
+}
+"47
+[; ;task2/zero_crossing.c: 47: void start_spectating_zero_crossing(void) {
 [v _start_spectating_zero_crossing `(v ~T0 @X0 1 ef ]
 {
 [e :U _start_spectating_zero_crossing ]
 [f ]
-"44
-[; ;task2/zero_crossing.c: 44:     setup_RB5();
+"48
+[; ;task2/zero_crossing.c: 48:     setup_RB5();
 [e ( _setup_RB5 ..  ]
-"45
-[; ;task2/zero_crossing.c: 45:     setup_ADC();
+"49
+[; ;task2/zero_crossing.c: 49:     setup_ADC();
 [e ( _setup_ADC ..  ]
-"46
-[; ;task2/zero_crossing.c: 46:     start_adc_conversion();
+"50
+[; ;task2/zero_crossing.c: 50:     start_adc_conversion();
 [e ( _start_adc_conversion ..  ]
-"47
-[; ;task2/zero_crossing.c: 47: }
-[e :UE 143 ]
+"51
+[; ;task2/zero_crossing.c: 51: }
+[e :UE 144 ]
 }

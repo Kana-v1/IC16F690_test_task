@@ -13,9 +13,7 @@ extern "C" {
 #endif
 
 #include <xc.h>
-    
-#define DIGITAL_IO    0
-#define INPUT 1
+   
 
     void setup_RC2(void);
     int is_pwr_btn_pressed(void);

@@ -15,13 +15,12 @@ extern "C" {
 #include <xc.h>
 #include "../general.h"
 
-#define PULSE_DURATION 20 // mcsec
 
 #define FULL_POWER  0
 #define MID_POWER  1
 #define LOW_POWER   2
 
-    void pwr_pulse(void);
+    void board_pwr_pulse(void);
     void set_mid_pwr(void);
     void set_full_pwr(void);
     void set_low_pwr(void);

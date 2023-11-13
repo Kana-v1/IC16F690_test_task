@@ -5,7 +5,7 @@
 
 void setup_RC2(void) {
     ANSELbits.ANS6 = DIGITAL_IO;
-    TRISCbits.TRISC2 = INPUT; // rc2 as input
+    TRISCbits.TRISC2 = GPIO_INPUT; // rc2 as input
 }
 
 int is_pwr_btn_pressed(void) {

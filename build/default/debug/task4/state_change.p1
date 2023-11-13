@@ -1,9 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"26 task4/../task3/adjust_power.h
-[; ;task4/../task3/adjust_power.h: 26:     void set_full_pwr(void);
+"25 task4/../task3/adjust_power.h
+[; ;task4/../task3/adjust_power.h: 25:     void set_full_pwr(void);
 [v _set_full_pwr `(v ~T0 @X0 0 ef ]
-"27
-[; ;task4/../task3/adjust_power.h: 27:     void set_low_pwr(void);
+"26
+[; ;task4/../task3/adjust_power.h: 26:     void set_low_pwr(void);
 [v _set_low_pwr `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 54: __asm("INDF equ 00h");

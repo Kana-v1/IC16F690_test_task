@@ -38,9 +38,9 @@ LED_info** gather_LED_info(void) {
     return leds_info;
 }
 
-void setup_GPIO(void) {
+void setup_leds_GPIO(void) {
     OSCCONbits.SCS = 0;
-    ANSEL = 0;
+    ANSELbits.ANS3 = 0;
 }
 
 void led_on(LED_info* led) {
@@ -55,7 +55,7 @@ void led_off(LED_info* led) {
 }
 
 void blink(void) {
-    setup_GPIO();
+    setup_leds_GPIO();
     LED_info** leds_info = gather_LED_info();
     
     for (int i = 0; i < 5; i++) {

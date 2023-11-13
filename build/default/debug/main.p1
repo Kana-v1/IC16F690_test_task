@@ -1,22 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"34 ./task2/zero_crossing.h
-[; ;./task2/zero_crossing.h: 34:     int is_adc_conversion_done(void);
-[v _is_adc_conversion_done `(i ~T0 @X0 0 ef ]
-"35
-[; ;./task2/zero_crossing.h: 35:     void reset_adc_interrupt(void);
-[v _reset_adc_interrupt `(v ~T0 @X0 0 ef ]
-"37
-[; ;./task2/zero_crossing.h: 37:     int is_crossing_zero_point(void);
-[v _is_crossing_zero_point `(i ~T0 @X0 0 ef ]
-"22 ./task5/pwr_btn_control.h
-[; ;./task5/pwr_btn_control.h: 22:     void set_state_according_to_pwr_btn(void);
-[v _set_state_according_to_pwr_btn `(v ~T0 @X0 0 ef ]
-"24 ./task4/../task3/adjust_power.h
-[v _pwr_pulse `(v ~T0 @X0 0 ef ]
+"41 ./task6/../general.h
+[v _interrupt_caused_by_timer `(i ~T0 @X0 0 ef ]
+"42
+[v _stop_timer `(v ~T0 @X0 0 ef1`i ]
 "33 ./task2/zero_crossing.h
-[; ;./task2/zero_crossing.h: 33:     void start_adc_conversion(void);
+[; ;./task2/zero_crossing.h: 33:     int is_adc_conversion_done(void);
+[v _is_adc_conversion_done `(i ~T0 @X0 0 ef ]
+"34
+[; ;./task2/zero_crossing.h: 34:     void reset_adc_interrupt(void);
+[v _reset_adc_interrupt `(v ~T0 @X0 0 ef ]
+"36
+[; ;./task2/zero_crossing.h: 36:     int is_crossing_zero_point(void);
+[v _is_crossing_zero_point `(i ~T0 @X0 0 ef ]
+"20 ./task5/pwr_btn_control.h
+[; ;./task5/pwr_btn_control.h: 20:     void set_state_according_to_pwr_btn(void);
+[v _set_state_according_to_pwr_btn `(v ~T0 @X0 0 ef ]
+"23 ./task4/../task3/adjust_power.h
+[v _board_pwr_pulse `(v ~T0 @X0 0 ef ]
+"28 ./task6/engine_manage.h
+[; ;./task6/engine_manage.h: 28:     void supply_engine_power(void);
+[v _supply_engine_power `(v ~T0 @X0 0 ef ]
+"32 ./task2/zero_crossing.h
+[; ;./task2/zero_crossing.h: 32:     void start_adc_conversion(void);
 [v _start_adc_conversion `(v ~T0 @X0 0 ef ]
 "330 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 330:     struct {
@@ -29,19 +36,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "341
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 341: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"28 ./task4/../task3/adjust_power.h
+"38 ./task6/../general.h
+[v _setup_timer_hardware `(v ~T0 @X0 0 ef ]
+"27 ./task4/../task3/adjust_power.h
 [v _setup_RC7 `(v ~T0 @X0 0 ef ]
-"20 ./task5/pwr_btn_control.h
-[; ;./task5/pwr_btn_control.h: 20:     void setup_RC2(void);
+"18 ./task5/pwr_btn_control.h
+[; ;./task5/pwr_btn_control.h: 18:     void setup_RC2(void);
 [v _setup_RC2 `(v ~T0 @X0 0 ef ]
 "17 ./task4/state_change.h
 [; ;./task4/state_change.h: 17:     void turn_board_on(void);
 [v _turn_board_on `(v ~T0 @X0 0 ef ]
+"27 ./task6/engine_manage.h
+[; ;./task6/engine_manage.h: 27:     void setup_engine_managment_ports(void);
+[v _setup_engine_managment_ports `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"30 ./task1/blink.h
-[v _blink `(v ~T0 @X0 0 ef ]
-"32 ./task2/zero_crossing.h
-[; ;./task2/zero_crossing.h: 32:     void start_spectating_zero_crossing(void);
+"31 ./task2/zero_crossing.h
+[; ;./task2/zero_crossing.h: 31:     void start_spectating_zero_crossing(void);
 [v _start_spectating_zero_crossing `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 54: __asm("INDF equ 00h");
@@ -265,99 +275,120 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./task1/blink.h
 [p x FOSC  =  INTRCIO    ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"17 main.c
-[; ;main.c: 17: void __attribute__((picinterrupt(("")))) isr(void) {
+"18 main.c
+[; ;main.c: 18: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"18
-[; ;main.c: 18:     if (is_adc_conversion_done()) {
-[e $ ! != ( _is_adc_conversion_done ..  -> 0 `i 139  ]
-{
 "19
-[; ;main.c: 19:         reset_adc_interrupt();
-[e ( _reset_adc_interrupt ..  ]
+[; ;main.c: 19:     int timer_num = interrupt_caused_by_timer();
+[v _timer_num `i ~T0 @X0 1 a ]
+[e = _timer_num ( _interrupt_caused_by_timer ..  ]
 "20
-[; ;main.c: 20:         if (is_crossing_zero_point()) {
-[e $ ! != ( _is_crossing_zero_point ..  -> 0 `i 140  ]
+[; ;main.c: 20:     if (timer_num) {
+[e $ ! != _timer_num -> 0 `i 139  ]
 {
 "21
-[; ;main.c: 21:             set_state_according_to_pwr_btn();
-[e ( _set_state_according_to_pwr_btn ..  ]
+[; ;main.c: 21:         stop_timer(timer_num);
+[e ( _stop_timer (1 _timer_num ]
 "22
-[; ;main.c: 22:             pwr_pulse();
-[e ( _pwr_pulse ..  ]
-"23
-[; ;main.c: 23:         }
-}
-[e :U 140 ]
-"25
-[; ;main.c: 25:         start_adc_conversion();
-[e ( _start_adc_conversion ..  ]
-"26
-[; ;main.c: 26:     }
+[; ;main.c: 22:     }
 }
 [e :U 139 ]
+"24
+[; ;main.c: 24:     if (is_adc_conversion_done()) {
+[e $ ! != ( _is_adc_conversion_done ..  -> 0 `i 140  ]
+{
+"25
+[; ;main.c: 25:         reset_adc_interrupt();
+[e ( _reset_adc_interrupt ..  ]
+"26
+[; ;main.c: 26:         if (is_crossing_zero_point()) {
+[e $ ! != ( _is_crossing_zero_point ..  -> 0 `i 141  ]
+{
+"27
+[; ;main.c: 27:             set_state_according_to_pwr_btn();
+[e ( _set_state_according_to_pwr_btn ..  ]
 "28
-[; ;main.c: 28:     return;
-[e $UE 138  ]
+[; ;main.c: 28:             board_pwr_pulse();
+[e ( _board_pwr_pulse ..  ]
 "29
-[; ;main.c: 29: }
+[; ;main.c: 29:             supply_engine_power();
+[e ( _supply_engine_power ..  ]
+"30
+[; ;main.c: 30:         }
+}
+[e :U 141 ]
+"32
+[; ;main.c: 32:         start_adc_conversion();
+[e ( _start_adc_conversion ..  ]
+"33
+[; ;main.c: 33:     }
+}
+[e :U 140 ]
+"34
+[; ;main.c: 34: }
 [e :UE 138 ]
 }
-"31
-[; ;main.c: 31: void global_setup(void) {
+"36
+[; ;main.c: 36: void global_setup(void) {
 [v _global_setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _global_setup ]
 [f ]
-"32
-[; ;main.c: 32:     INTCONbits.GIE = 1;
+"37
+[; ;main.c: 37:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"33
-[; ;main.c: 33:     setup_RC7();
+"38
+[; ;main.c: 38:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"40
+[; ;main.c: 40:     setup_timer_hardware();
+[e ( _setup_timer_hardware ..  ]
+"41
+[; ;main.c: 41:     setup_RC7();
 [e ( _setup_RC7 ..  ]
-"34
-[; ;main.c: 34:     setup_RC2();
+"42
+[; ;main.c: 42:     setup_RC2();
 [e ( _setup_RC2 ..  ]
-"35
-[; ;main.c: 35:     turn_board_on();
+"43
+[; ;main.c: 43:     turn_board_on();
 [e ( _turn_board_on ..  ]
-"36
-[; ;main.c: 36: }
-[e :UE 141 ]
+"44
+[; ;main.c: 44:     setup_engine_managment_ports();
+[e ( _setup_engine_managment_ports ..  ]
+"45
+[; ;main.c: 45: }
+[e :UE 142 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"38
-[; ;main.c: 38: void main(void) {
+"47
+[; ;main.c: 47: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"39
-[; ;main.c: 39:     blink();
-[e ( _blink ..  ]
-"41
-[; ;main.c: 41:     global_setup();
+"50
+[; ;main.c: 50:     global_setup();
 [e ( _global_setup ..  ]
-"43
-[; ;main.c: 43:     start_spectating_zero_crossing();
+"51
+[; ;main.c: 51:     start_spectating_zero_crossing();
 [e ( _start_spectating_zero_crossing ..  ]
-"45
-[; ;main.c: 45:     while (1){
-[e :U 144 ]
-{
-"47
-[; ;main.c: 47:     }
-}
-[e :U 143 ]
-[e $U 144  ]
+"53
+[; ;main.c: 53:     while (1){
 [e :U 145 ]
-"48
-[; ;main.c: 48:     return;
-[e $UE 142  ]
-"49
-[; ;main.c: 49: }
-[e :UE 142 ]
+{
+"55
+[; ;main.c: 55:     }
+}
+[e :U 144 ]
+[e $U 145  ]
+[e :U 146 ]
+"56
+[; ;main.c: 56:     return;
+[e $UE 143  ]
+"57
+[; ;main.c: 57: }
+[e :UE 143 ]
 }

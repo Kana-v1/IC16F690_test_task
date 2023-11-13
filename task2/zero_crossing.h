@@ -16,13 +16,12 @@ extern "C" {
 #include <stdlib.h>
 #include <stdio.h>
 
-#define PULL_UP_DISABLED 0x0
-#define INPUT 0x1
-#define ANALOG_INPUT    0x1
-#define V_REF   0x0
+#define INPUT 1
+#define ANALOG_INPUT    1
+#define V_REF   0
 #define AN11    0b1011
-#define ON  0x1
-#define RIGHT_JUSTIFIED 0x1
+#define ON  1
+#define RIGHT_JUSTIFIED 1
 
 
 #define VOLTAGE 5

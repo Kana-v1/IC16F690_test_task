@@ -38,9 +38,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1564
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 1564: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS63 ~T0 @X0 0 e@143 ]
-"3002
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 3002: extern volatile unsigned char ANSEL __attribute__((address(0x11E)));
-[v _ANSEL `Vuc ~T0 @X0 0 e@286 ]
+"3008
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 3008:     struct {
+[s S125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S125 . ANS0 ANS1 ANS2 ANS3 ANS4 ANS5 ANS6 ANS7 ]
+"3007
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 3007: typedef union {
+[u S124 `S125 1 ]
+[n S124 . . ]
+"3019
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 3019: extern volatile ANSELbits_t ANSELbits __attribute__((address(0x11E)));
+[v _ANSELbits `VS124 ~T0 @X0 0 e@286 ]
 [v F164 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\builtins.h
 [v __delay `JF164 ~T0 @X0 0 e ]
@@ -365,17 +373,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 136 ]
 }
 "41
-[; ;task1/blink.c: 41: void setup_GPIO(void) {
-[v _setup_GPIO `(v ~T0 @X0 1 ef ]
+[; ;task1/blink.c: 41: void setup_leds_GPIO(void) {
+[v _setup_leds_GPIO `(v ~T0 @X0 1 ef ]
 {
-[e :U _setup_GPIO ]
+[e :U _setup_leds_GPIO ]
 [f ]
 "42
 [; ;task1/blink.c: 42:     OSCCONbits.SCS = 0;
 [e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
 "43
-[; ;task1/blink.c: 43:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;task1/blink.c: 43:     ANSELbits.ANS3 = 0;
+[e = . . _ANSELbits 0 3 -> -> 0 `i `uc ]
 "44
 [; ;task1/blink.c: 44: }
 [e :UE 137 ]
@@ -426,8 +434,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _blink ]
 [f ]
 "58
-[; ;task1/blink.c: 58:     setup_GPIO();
-[e ( _setup_GPIO ..  ]
+[; ;task1/blink.c: 58:     setup_leds_GPIO();
+[e ( _setup_leds_GPIO ..  ]
 "59
 [; ;task1/blink.c: 59:     LED_info** leds_info = gather_LED_info();
 [v _leds_info `**S135 ~T0 @X0 1 a ]

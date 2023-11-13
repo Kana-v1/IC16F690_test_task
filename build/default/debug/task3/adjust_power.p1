@@ -21,11 +21,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1351
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 1351: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
 [v _TRISCbits `VS54 ~T0 @X0 0 e@135 ]
-[v F164 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\builtins.h
-[v __delay `JF164 ~T0 @X0 0 e ]
-[p i __delay ]
-"261 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h
+"261
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 261:     struct {
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S14 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
@@ -36,6 +32,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "272
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 272: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
 [v _PORTCbits `VS13 ~T0 @X0 0 e@7 ]
+"40 task3/../general.h
+[; ;task3/../general.h: 40:     void sleep_us_thread1(unsigned int time);
+[v _sleep_us_thread1 `(v ~T0 @X0 0 ef1`ui ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f690.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -283,89 +282,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _set_low_pwr ]
 [f ]
-"13
-[; ;task3/adjust_power.c: 13:     power_lvl = 2;
-[e = _power_lvl -> -> 2 `i `ui ]
 "14
-[; ;task3/adjust_power.c: 14: }
+[; ;task3/adjust_power.c: 14:     power_lvl = 1;
+[e = _power_lvl -> -> 1 `i `ui ]
+"15
+[; ;task3/adjust_power.c: 15: }
 [e :UE 136 ]
 }
-"16
-[; ;task3/adjust_power.c: 16: void set_full_pwr(void) {
+"17
+[; ;task3/adjust_power.c: 17: void set_full_pwr(void) {
 [v _set_full_pwr `(v ~T0 @X0 1 ef ]
 {
 [e :U _set_full_pwr ]
 [f ]
-"17
-[; ;task3/adjust_power.c: 17:     power_lvl = 0;
-[e = _power_lvl -> -> 0 `i `ui ]
-"18
-[; ;task3/adjust_power.c: 18: }
+"19
+[; ;task3/adjust_power.c: 19:     power_lvl = 1;
+[e = _power_lvl -> -> 1 `i `ui ]
+"20
+[; ;task3/adjust_power.c: 20: }
 [e :UE 137 ]
 }
-"20
-[; ;task3/adjust_power.c: 20: void set_mid_pwr(void) {
+"22
+[; ;task3/adjust_power.c: 22: void set_mid_pwr(void) {
 [v _set_mid_pwr `(v ~T0 @X0 1 ef ]
 {
 [e :U _set_mid_pwr ]
 [f ]
-"21
-[; ;task3/adjust_power.c: 21:     power_lvl = 1;
+"23
+[; ;task3/adjust_power.c: 23:     power_lvl = 1;
 [e = _power_lvl -> -> 1 `i `ui ]
-"22
-[; ;task3/adjust_power.c: 22: }
+"24
+[; ;task3/adjust_power.c: 24: }
 [e :UE 138 ]
 }
-"24
-[; ;task3/adjust_power.c: 24: void pwr_pulse(void) {
-[v _pwr_pulse `(v ~T0 @X0 1 ef ]
+"26
+[; ;task3/adjust_power.c: 26: void board_pwr_pulse(void) {
+[v _board_pwr_pulse `(v ~T0 @X0 1 ef ]
 {
-[e :U _pwr_pulse ]
+[e :U _board_pwr_pulse ]
 [f ]
-"25
-[; ;task3/adjust_power.c: 25:     if (power_lvl == 2) {
+"27
+[; ;task3/adjust_power.c: 27:     if (power_lvl == 2) {
 [e $ ! == _power_lvl -> -> 2 `i `ui 140  ]
 {
-"26
-[; ;task3/adjust_power.c: 26:         return;
+"28
+[; ;task3/adjust_power.c: 28:         return;
 [e $UE 139  ]
-"27
-[; ;task3/adjust_power.c: 27:     }
+"29
+[; ;task3/adjust_power.c: 29:     }
 }
 [e :U 140 ]
-"29
-[; ;task3/adjust_power.c: 29:     if (power_lvl == 1) {
-[e $ ! == _power_lvl -> -> 1 `i `ui 141  ]
-{
-"30
-[; ;task3/adjust_power.c: 30:         const float pulse_shift = 0.7 * 1/50 / 2;
-[v F1312 `Cf ~T0 @X0 1 s pulse_shift ]
-[i F1312
--> / / * .0.7 -> -> 1 `i `d -> -> 50 `i `d -> -> 2 `i `d `f
-]
-"31
-[; ;task3/adjust_power.c: 31:         const unsigned long pulse_shift_us = (unsigned long)(pulse_shift * 1,000,000);
-[v F1313 `Cul ~T0 @X0 1 s pulse_shift_us ]
-[i F1313
--> ; ; * F1312 -> -> 1 `i `f -> 0 `i -> 0 `i `ul
-]
-"32
-[; ;task3/adjust_power.c: 32:         _delay((unsigned long)((pulse_shift_us)*((4000000UL)/4000000.0)));
-[e ( __delay (1 -> * -> F1313 `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
-"33
-[; ;task3/adjust_power.c: 33:     }
-}
-[e :U 141 ]
-"35
-[; ;task3/adjust_power.c: 35:     PORTCbits.RC7 = 1;
-[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
-"36
-[; ;task3/adjust_power.c: 36:     _delay((unsigned long)((20)*((4000000UL)/4000000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
 "37
-[; ;task3/adjust_power.c: 37:     PORTCbits.RC7 = 0;
-[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+[; ;task3/adjust_power.c: 37:     PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
 "38
-[; ;task3/adjust_power.c: 38: }
+[; ;task3/adjust_power.c: 38:     sleep_us_thread1(20);
+[e ( _sleep_us_thread1 (1 -> -> 20 `i `ui ]
+"39
+[; ;task3/adjust_power.c: 39:     PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"40
+[; ;task3/adjust_power.c: 40: }
 [e :UE 139 ]
 }
