@@ -68,7 +68,14 @@ void start_engine(void) {
     current_lvl = ENGINE_START_LVL;
 }
 
-static int set_engine_power_level(unsigned int lvl) {
+int stop_engine(void) {
+    int buf = current_lvl;
+    current_lvl = ENGINE_TURNED_OFF;
+    
+    return buf;
+}
+
+int set_engine_power_level(unsigned int lvl) {
     int level = 0;
 
     switch (lvl) {

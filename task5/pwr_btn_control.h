@@ -13,7 +13,8 @@ extern "C" {
 #endif
 
 #include <xc.h>
-   
+#include "../task6/engine_manage.h"
+#include "../task8/change_engine_power.h"   
 
     void setup_RC2(void);
     int is_pwr_btn_pressed(void);

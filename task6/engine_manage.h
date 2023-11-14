@@ -29,7 +29,9 @@ extern "C" {
     void start_engine(void);
     int increment_engine_lvl(void);
     int dicrement_engine_lvl(void);
-
+    int stop_engine(void);
+    int set_engine_power_level(unsigned int lvl);
+    
 #ifdef	__cplusplus
 }
 #endif

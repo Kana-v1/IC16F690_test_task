@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=task1/blink.h task2/zero_crossing.h task3/adjust_power.h general.h task4/state_change.h task5/pwr_btn_control.h task6/engine_manage.h main.c task1/blink.c task2/zero_crossing.c task3/adjust_power.c task4/state_change.c task5/pwr_btn_control.c task6/engine_manage.c general.c task8/change_engine_power.h task8/change_engine_power.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c task1/blink.c task2/zero_crossing.c task3/adjust_power.c task4/state_change.c task5/pwr_btn_control.c task6/engine_manage.c general.c task8/change_engine_power.c task9/fltr_handler.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/task1/blink.o ${OBJECTDIR}/task2/zero_crossing.o ${OBJECTDIR}/task3/adjust_power.o ${OBJECTDIR}/general.o ${OBJECTDIR}/task4/state_change.o ${OBJECTDIR}/task5/pwr_btn_control.o ${OBJECTDIR}/task6/engine_manage.o ${OBJECTDIR}/main.p1 ${OBJECTDIR}/task1/blink.p1 ${OBJECTDIR}/task2/zero_crossing.p1 ${OBJECTDIR}/task3/adjust_power.p1 ${OBJECTDIR}/task4/state_change.p1 ${OBJECTDIR}/task5/pwr_btn_control.p1 ${OBJECTDIR}/task6/engine_manage.p1 ${OBJECTDIR}/general.p1 ${OBJECTDIR}/task8/change_engine_power.o ${OBJECTDIR}/task8/change_engine_power.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/task1/blink.o.d ${OBJECTDIR}/task2/zero_crossing.o.d ${OBJECTDIR}/task3/adjust_power.o.d ${OBJECTDIR}/general.o.d ${OBJECTDIR}/task4/state_change.o.d ${OBJECTDIR}/task5/pwr_btn_control.o.d ${OBJECTDIR}/task6/engine_manage.o.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/task1/blink.p1.d ${OBJECTDIR}/task2/zero_crossing.p1.d ${OBJECTDIR}/task3/adjust_power.p1.d ${OBJECTDIR}/task4/state_change.p1.d ${OBJECTDIR}/task5/pwr_btn_control.p1.d ${OBJECTDIR}/task6/engine_manage.p1.d ${OBJECTDIR}/general.p1.d ${OBJECTDIR}/task8/change_engine_power.o.d ${OBJECTDIR}/task8/change_engine_power.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/task1/blink.p1 ${OBJECTDIR}/task2/zero_crossing.p1 ${OBJECTDIR}/task3/adjust_power.p1 ${OBJECTDIR}/task4/state_change.p1 ${OBJECTDIR}/task5/pwr_btn_control.p1 ${OBJECTDIR}/task6/engine_manage.p1 ${OBJECTDIR}/general.p1 ${OBJECTDIR}/task8/change_engine_power.p1 ${OBJECTDIR}/task9/fltr_handler.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/task1/blink.p1.d ${OBJECTDIR}/task2/zero_crossing.p1.d ${OBJECTDIR}/task3/adjust_power.p1.d ${OBJECTDIR}/task4/state_change.p1.d ${OBJECTDIR}/task5/pwr_btn_control.p1.d ${OBJECTDIR}/task6/engine_manage.p1.d ${OBJECTDIR}/general.p1.d ${OBJECTDIR}/task8/change_engine_power.p1.d ${OBJECTDIR}/task9/fltr_handler.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/task1/blink.o ${OBJECTDIR}/task2/zero_crossing.o ${OBJECTDIR}/task3/adjust_power.o ${OBJECTDIR}/general.o ${OBJECTDIR}/task4/state_change.o ${OBJECTDIR}/task5/pwr_btn_control.o ${OBJECTDIR}/task6/engine_manage.o ${OBJECTDIR}/main.p1 ${OBJECTDIR}/task1/blink.p1 ${OBJECTDIR}/task2/zero_crossing.p1 ${OBJECTDIR}/task3/adjust_power.p1 ${OBJECTDIR}/task4/state_change.p1 ${OBJECTDIR}/task5/pwr_btn_control.p1 ${OBJECTDIR}/task6/engine_manage.p1 ${OBJECTDIR}/general.p1 ${OBJECTDIR}/task8/change_engine_power.o ${OBJECTDIR}/task8/change_engine_power.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/task1/blink.p1 ${OBJECTDIR}/task2/zero_crossing.p1 ${OBJECTDIR}/task3/adjust_power.p1 ${OBJECTDIR}/task4/state_change.p1 ${OBJECTDIR}/task5/pwr_btn_control.p1 ${OBJECTDIR}/task6/engine_manage.p1 ${OBJECTDIR}/general.p1 ${OBJECTDIR}/task8/change_engine_power.p1 ${OBJECTDIR}/task9/fltr_handler.p1
 
 # Source Files
-SOURCEFILES=task1/blink.h task2/zero_crossing.h task3/adjust_power.h general.h task4/state_change.h task5/pwr_btn_control.h task6/engine_manage.h main.c task1/blink.c task2/zero_crossing.c task3/adjust_power.c task4/state_change.c task5/pwr_btn_control.c task6/engine_manage.c general.c task8/change_engine_power.h task8/change_engine_power.c
+SOURCEFILES=main.c task1/blink.c task2/zero_crossing.c task3/adjust_power.c task4/state_change.c task5/pwr_btn_control.c task6/engine_manage.c general.c task8/change_engine_power.c task9/fltr_handler.c
 
 
 
@@ -88,62 +88,6 @@ MP_PROCESSOR_OPTION=16F690
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/task1/blink.o: task1/blink.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task1" 
-	@${RM} ${OBJECTDIR}/task1/blink.o.d 
-	@${RM} ${OBJECTDIR}/task1/blink.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task1/blink.o task1/blink.h 
-	@-${MV} ${OBJECTDIR}/task1/blink.d ${OBJECTDIR}/task1/blink.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task1/blink.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task2/zero_crossing.o: task2/zero_crossing.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task2" 
-	@${RM} ${OBJECTDIR}/task2/zero_crossing.o.d 
-	@${RM} ${OBJECTDIR}/task2/zero_crossing.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task2/zero_crossing.o task2/zero_crossing.h 
-	@-${MV} ${OBJECTDIR}/task2/zero_crossing.d ${OBJECTDIR}/task2/zero_crossing.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task2/zero_crossing.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task3/adjust_power.o: task3/adjust_power.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task3" 
-	@${RM} ${OBJECTDIR}/task3/adjust_power.o.d 
-	@${RM} ${OBJECTDIR}/task3/adjust_power.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task3/adjust_power.o task3/adjust_power.h 
-	@-${MV} ${OBJECTDIR}/task3/adjust_power.d ${OBJECTDIR}/task3/adjust_power.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task3/adjust_power.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/general.o: general.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/general.o.d 
-	@${RM} ${OBJECTDIR}/general.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/general.o general.h 
-	@-${MV} ${OBJECTDIR}/general.d ${OBJECTDIR}/general.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/general.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task4/state_change.o: task4/state_change.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task4" 
-	@${RM} ${OBJECTDIR}/task4/state_change.o.d 
-	@${RM} ${OBJECTDIR}/task4/state_change.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task4/state_change.o task4/state_change.h 
-	@-${MV} ${OBJECTDIR}/task4/state_change.d ${OBJECTDIR}/task4/state_change.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task4/state_change.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task5/pwr_btn_control.o: task5/pwr_btn_control.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task5" 
-	@${RM} ${OBJECTDIR}/task5/pwr_btn_control.o.d 
-	@${RM} ${OBJECTDIR}/task5/pwr_btn_control.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task5/pwr_btn_control.o task5/pwr_btn_control.h 
-	@-${MV} ${OBJECTDIR}/task5/pwr_btn_control.d ${OBJECTDIR}/task5/pwr_btn_control.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task5/pwr_btn_control.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task6/engine_manage.o: task6/engine_manage.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task6" 
-	@${RM} ${OBJECTDIR}/task6/engine_manage.o.d 
-	@${RM} ${OBJECTDIR}/task6/engine_manage.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task6/engine_manage.o task6/engine_manage.h 
-	@-${MV} ${OBJECTDIR}/task6/engine_manage.d ${OBJECTDIR}/task6/engine_manage.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task6/engine_manage.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
@@ -208,14 +152,6 @@ ${OBJECTDIR}/general.p1: general.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/general.d ${OBJECTDIR}/general.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/general.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/task8/change_engine_power.o: task8/change_engine_power.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task8" 
-	@${RM} ${OBJECTDIR}/task8/change_engine_power.o.d 
-	@${RM} ${OBJECTDIR}/task8/change_engine_power.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task8/change_engine_power.o task8/change_engine_power.h 
-	@-${MV} ${OBJECTDIR}/task8/change_engine_power.d ${OBJECTDIR}/task8/change_engine_power.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task8/change_engine_power.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/task8/change_engine_power.p1: task8/change_engine_power.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/task8" 
 	@${RM} ${OBJECTDIR}/task8/change_engine_power.p1.d 
@@ -224,63 +160,15 @@ ${OBJECTDIR}/task8/change_engine_power.p1: task8/change_engine_power.c  nbprojec
 	@-${MV} ${OBJECTDIR}/task8/change_engine_power.d ${OBJECTDIR}/task8/change_engine_power.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/task8/change_engine_power.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/task9/fltr_handler.p1: task9/fltr_handler.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/task9" 
+	@${RM} ${OBJECTDIR}/task9/fltr_handler.p1.d 
+	@${RM} ${OBJECTDIR}/task9/fltr_handler.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task9/fltr_handler.p1 task9/fltr_handler.c 
+	@-${MV} ${OBJECTDIR}/task9/fltr_handler.d ${OBJECTDIR}/task9/fltr_handler.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/task9/fltr_handler.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
-${OBJECTDIR}/task1/blink.o: task1/blink.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task1" 
-	@${RM} ${OBJECTDIR}/task1/blink.o.d 
-	@${RM} ${OBJECTDIR}/task1/blink.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task1/blink.o task1/blink.h 
-	@-${MV} ${OBJECTDIR}/task1/blink.d ${OBJECTDIR}/task1/blink.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task1/blink.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task2/zero_crossing.o: task2/zero_crossing.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task2" 
-	@${RM} ${OBJECTDIR}/task2/zero_crossing.o.d 
-	@${RM} ${OBJECTDIR}/task2/zero_crossing.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task2/zero_crossing.o task2/zero_crossing.h 
-	@-${MV} ${OBJECTDIR}/task2/zero_crossing.d ${OBJECTDIR}/task2/zero_crossing.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task2/zero_crossing.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task3/adjust_power.o: task3/adjust_power.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task3" 
-	@${RM} ${OBJECTDIR}/task3/adjust_power.o.d 
-	@${RM} ${OBJECTDIR}/task3/adjust_power.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task3/adjust_power.o task3/adjust_power.h 
-	@-${MV} ${OBJECTDIR}/task3/adjust_power.d ${OBJECTDIR}/task3/adjust_power.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task3/adjust_power.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/general.o: general.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/general.o.d 
-	@${RM} ${OBJECTDIR}/general.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/general.o general.h 
-	@-${MV} ${OBJECTDIR}/general.d ${OBJECTDIR}/general.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/general.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task4/state_change.o: task4/state_change.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task4" 
-	@${RM} ${OBJECTDIR}/task4/state_change.o.d 
-	@${RM} ${OBJECTDIR}/task4/state_change.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task4/state_change.o task4/state_change.h 
-	@-${MV} ${OBJECTDIR}/task4/state_change.d ${OBJECTDIR}/task4/state_change.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task4/state_change.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task5/pwr_btn_control.o: task5/pwr_btn_control.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task5" 
-	@${RM} ${OBJECTDIR}/task5/pwr_btn_control.o.d 
-	@${RM} ${OBJECTDIR}/task5/pwr_btn_control.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task5/pwr_btn_control.o task5/pwr_btn_control.h 
-	@-${MV} ${OBJECTDIR}/task5/pwr_btn_control.d ${OBJECTDIR}/task5/pwr_btn_control.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task5/pwr_btn_control.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/task6/engine_manage.o: task6/engine_manage.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task6" 
-	@${RM} ${OBJECTDIR}/task6/engine_manage.o.d 
-	@${RM} ${OBJECTDIR}/task6/engine_manage.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task6/engine_manage.o task6/engine_manage.h 
-	@-${MV} ${OBJECTDIR}/task6/engine_manage.d ${OBJECTDIR}/task6/engine_manage.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task6/engine_manage.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
@@ -345,14 +233,6 @@ ${OBJECTDIR}/general.p1: general.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/general.d ${OBJECTDIR}/general.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/general.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/task8/change_engine_power.o: task8/change_engine_power.h  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/task8" 
-	@${RM} ${OBJECTDIR}/task8/change_engine_power.o.d 
-	@${RM} ${OBJECTDIR}/task8/change_engine_power.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task8/change_engine_power.o task8/change_engine_power.h 
-	@-${MV} ${OBJECTDIR}/task8/change_engine_power.d ${OBJECTDIR}/task8/change_engine_power.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/task8/change_engine_power.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/task8/change_engine_power.p1: task8/change_engine_power.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/task8" 
 	@${RM} ${OBJECTDIR}/task8/change_engine_power.p1.d 
@@ -360,6 +240,14 @@ ${OBJECTDIR}/task8/change_engine_power.p1: task8/change_engine_power.c  nbprojec
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task8/change_engine_power.p1 task8/change_engine_power.c 
 	@-${MV} ${OBJECTDIR}/task8/change_engine_power.d ${OBJECTDIR}/task8/change_engine_power.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/task8/change_engine_power.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/task9/fltr_handler.p1: task9/fltr_handler.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/task9" 
+	@${RM} ${OBJECTDIR}/task9/fltr_handler.p1.d 
+	@${RM} ${OBJECTDIR}/task9/fltr_handler.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/task9/fltr_handler.p1 task9/fltr_handler.c 
+	@-${MV} ${OBJECTDIR}/task9/fltr_handler.d ${OBJECTDIR}/task9/fltr_handler.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/task9/fltr_handler.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

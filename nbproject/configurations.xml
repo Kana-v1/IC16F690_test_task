@@ -12,6 +12,7 @@
       <itemPath>task5/pwr_btn_control.h</itemPath>
       <itemPath>task6/engine_manage.h</itemPath>
       <itemPath>task8/change_engine_power.h</itemPath>
+      <itemPath>task9/fltr_handler.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -29,6 +30,7 @@
       <itemPath>task6/engine_manage.c</itemPath>
       <itemPath>general.c</itemPath>
       <itemPath>task8/change_engine_power.c</itemPath>
+      <itemPath>task9/fltr_handler.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

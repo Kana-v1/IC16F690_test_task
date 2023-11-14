@@ -15,8 +15,13 @@
 #include "task5/pwr_btn_control.h"
 #include "task6/engine_manage.h"
 #include "task8/change_engine_power.h"
+#include "task9/fltr_handler.h"
 
 void __interrupt() isr(void) {
+    blink();
+    check_fltr_state();
+    check_plus_minus_btns_state();
+    
     int timer_num = interrupt_caused_by_timer();
 
     int board_pwr_pulse_should_run = 0;

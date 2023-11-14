@@ -29,6 +29,8 @@ extern "C" {
     void improve_engine_power(void);
     void reduce_engine_power(void);
     
+    void check_plus_minus_btns_state(void);
+    
     
 #ifdef	__cplusplus
 }
